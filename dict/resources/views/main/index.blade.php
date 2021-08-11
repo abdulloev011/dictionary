@@ -11,7 +11,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <h5 class="navbar-brand" href="#">Navbar</h5>
+      <h5 class="navbar-brand" href="#">Main page</h5>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">

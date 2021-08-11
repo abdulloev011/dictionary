@@ -31,7 +31,7 @@ Route::middleware([Authenticate::class])->group(
  
                 
                 Route::post('/update', [AdminController::class,'updateOrder'])->name('update');
-                //Route::get('/update', [AdminController::class,'valuesUpdate'])->name('values-update');
+                Route::get('/update', [AdminController::class,'viewUpdate'])->name('view-update');
                 
             });
             Route::get('users', [AdminController::class,'users'])->name('users');

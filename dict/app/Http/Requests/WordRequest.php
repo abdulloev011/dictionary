@@ -28,4 +28,13 @@ class WordRequest extends FormRequest
             'en_word'=> 'required|unique:App\Models\Words,english',
         ];
     }
+    public function messages()
+    {   
+        return[
+            'tj_word.unique'=> 'Уже есть такое таджикское слово в базе',
+            'en_word.unique'=> 'Уже есть такое английское слово в базе',
+            'tj_word.required'=> 'Поле не должен быть пустым',
+            'en_word.required'=> 'Поле не должен быть пустым',
+        ];
+    }
 }

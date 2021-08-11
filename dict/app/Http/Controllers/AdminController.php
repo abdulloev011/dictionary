@@ -44,7 +44,10 @@ class AdminController extends Controller
         return view('admin.user',$users);
     }
 
-    
+    public function viewUpdate()
+    {
+        return view("admin.updateForm");
+    }
 
     /*public function myWords($id){
         $words = DB::table('words')
