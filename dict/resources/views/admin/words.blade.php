@@ -39,6 +39,15 @@
 								<div class="modal-body">
 									
 									<div class="container"> 
+										@if ($errors->any())
+											<div class="alert alert-danger">
+												<ul>
+													@foreach ($errors->all() as $error)
+														<li>{{ $error }}</li>
+													@endforeach
+												</ul>
+											</div>
+										@endif
 										<form action="{{route('add-word')}}" class="g-3 needs-validation" method="POST" novalidate>
 											@csrf
 											<div class="row">
@@ -46,7 +55,7 @@
 												<div class="col col-md-6 col-12">
 													<div class="form-group">
 														<label for="tj_word">Слова на таджикском<sup><b>*</b></sup></label>
-														<input type="text" name="tj_word" placeholder="Введите слова на таджиксом" class="form-control" required>
+														<input type="text" name="tj_word" placeholder="Введите слова на таджиксом" class="form-control" >
 														<div class="invalid-feedback">
 															Пожалуйста, введите слова на таджидском.
 														</div>
@@ -57,7 +66,7 @@
 													<!-- ФИО отправителя -->
 													<div class="form-group">
 														<label for="en_word">Перевод таджикского слова на английском<sup><b>*</b></sup></label>
-														<input type="text" name="en_word" placeholder="Введите перевод таджикского слова на английском" class="form-control" required>
+														<input type="text" name="en_word" placeholder="Введите перевод таджикского слова на английском" class="form-control" >
 														<div class="invalid-feedback">
 															Пожалуйста, введите перевод таджидского слова
 														</div>

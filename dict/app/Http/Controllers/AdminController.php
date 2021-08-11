@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Role;
 use App\Models\User;
+use App\Http\Requests\WordRequest;
 use App\Models\Words;
 use Doctrine\Inflector\Rules\Word;
 
@@ -21,7 +22,7 @@ class AdminController extends Controller
         $words['user']= User::all();
         return view('admin.words',$words);
     }
-    public function newWord(Request $req){
+    public function newWord(WordRequest $req){
         $newWord = new Words();
     	$newWord->tajik = $req->input('tj_word');
         $newWord->english = $req->input('en_word');

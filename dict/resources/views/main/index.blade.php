@@ -17,22 +17,25 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Домой</a>
           </li>
-          <li class="nav-item ml-3">
-            <a class="btn btn-link text-light" style="text-decoration:none" href="{{route('register')}}" role="button">Регистрация</a>
-          </li>
-          <li class="nav-item ml-5">
-            <a class="btn btn-link text-light" href="{{route('login')}}" style="text-decoration:none" role="button">Войти</a>
-          </li>
         </ul>
-        <form class="d-flex" method="get"  action="{{route('search')}}">
-          @csrf
-          <input class="form-control me-2" name ="search" type="search" value="о" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary" type="submit">Поиск</button>
-        </form>
+        <a class="btn btn-link text-light"  href="{{route('register')}}" role="button">Регистрация</a>
+        <a class="btn btn-link text-light" href="{{route('login')}}"  role="button">Войти</a>
       </div>
     </div>
   </nav>
   <div class="container-xl">
+    
+    <form action="{{url('search')}}" method="get">
+      @csrf
+      <div class="row mt-5">
+        <div class="col-md-10"> 
+          <input type="search" class="form-control" name="search">
+        </div>
+        <div class="col-md-2">  
+          <button type="submit"  class="btn btn-primary">Поиск</button>
+        </div>
+      </div>
+    </form>
     
       <table class="table table-bordered mt-5 text-center h5">
         <thead class="table-dark">
@@ -50,11 +53,6 @@
           @endforeach 
         </tbody>
       </table>
-      <form action="{{url('search')}}" method="get">
-        @csrf
-        <input type="search" name="search" >
-        <button type="submit">asa</button>
-      </form>
   </div>
 </body>
 
