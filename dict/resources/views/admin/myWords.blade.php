@@ -9,8 +9,6 @@
 @section('content')
 <!-- DataTables  -->
 <link rel="stylesheet" href="{{asset('css/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 <div class="row">
 	<div class="col-12">  
 		<div class="card">
@@ -90,6 +88,15 @@
 			</div>
 			<!-- /.card-header -->
 			<div class="card-body">
+				@if ($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
 				<div class="table-responsive">
 					<table id="example2" class="table table-bordered table-hover">
 						<thead>

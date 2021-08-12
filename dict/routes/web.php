@@ -27,18 +27,17 @@ Route::middleware([Authenticate::class])->group(
             Route::prefix('words')->group(function()
             {
                 Route::post('/add-word', [AdminController::class,'newWord'])->name('add-word');
+                Route::post('/update-word', [AdminController::class,'updateWord'])->name('update-word');
                 Route::get('/my-words/{id}', [AdminController::class,'myWords'])->name('my-words'); 
  
                 
-                Route::post('/update', [AdminController::class,'updateOrder'])->name('update');
-                Route::get('/update', [AdminController::class,'viewUpdate'])->name('view-update');
+                Route::post('/add-word', [AdminController::class,'newWord'])->name('add-word');
+                Route::get('/add-word', [AdminController::class,'viewUpdate'])->name('view-update');
                 
             });
             Route::get('users', [AdminController::class,'users'])->name('users');
             Route::get('/delete-user/{id}', [AdminController::class,'delete'])->name('delete');
             Route::post('/update-user', [AdminController::class,'updateUser'])->name('update');
-            //Route::get('users/update-user/{id}', [AdminController::class,'user UpdateGet'])->name('view-update-users'); 
-            //Route::post('users/update-user/{id}', [AdminController::class,'updateUserPost'])->name('update-users'); 
         });
     });
 

@@ -17,7 +17,7 @@ class CreateWordsTable extends Migration
             $table->id('id_words');
             $table->string('tajik')->unique();
             $table->string('english')->unique();
-            $table->integer('user_id');
+            $table->integer('user_id')->default(1);
             $table->timestamps();
         });
     }

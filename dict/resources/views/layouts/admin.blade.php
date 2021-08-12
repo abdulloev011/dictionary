@@ -13,18 +13,11 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="{{asset('css/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="{{asset('css/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="{{asset('css/jqvmap/jqvmap.min.css')}}">
+ 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('css/dist/css/adminlte.min.css')}}">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{asset('css/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset('css/daterangepicker/daterangepicker.css')}}">
+  
   <!-- summernote -->
-  <link rel="stylesheet" href="{{asset('css/summernote/summernote-bs4.min.css')}}">
   
   
 </head>
@@ -46,43 +39,21 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
-
+     
+    <h1 style="margin-left: auto">@yield('header')</h1>
+      
+      
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
+      
 
-      <!-- Messages Dropdown Menu -->
-      <!-- Notifications Dropdown Menu -->
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="far fa-user-circle"></i>
@@ -147,8 +118,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+          
           <li class="nav-item">
             <a href="{{route("dashboard")}}" class="nav-link @yield("dashboard")">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -185,10 +155,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+            <a href="{{route('view-update')}}" class="nav-link @yield("add")">
+              <i class="nav-icon fas fa-plus"></i>
               <p>
-                Forms
+                Добавить слова
               </p>
             </a>
           </li>
@@ -237,6 +207,12 @@
 		  $("#user_del").val($(this).attr("data-id")); 
  	});
    });
+
+   $( document ).ready(function() {
+  	$(".words-edit").click(function() {
+		  $("#words_id").val($(this).attr("data-id")); 
+ 	});
+   });
 </script>
 
 
@@ -248,43 +224,21 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('css/bootstrap/js/bootstrap.bundle.min.js')}}"></script>+
-<!-- ChartJS -->
-<script src="{{asset('css/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('css/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{asset('css/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('css/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset('css/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('css/moment/moment.min.js')}}"></script>
-<script src="{{asset('css/daterangepicker/daterangepicker.js')}}"></script>
+
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('css/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('css/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{asset('css/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+
 <!-- AdminLTE App -->
 <script src="{{asset('css/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('css/dist/js/pages/dashboard.js')}}"></script>
 <script src="https://use.fontawesome.com/e7bec047f8.js"></script>
-<script src="{{asset('css/dist/js/demo.js')}}"></script>
 
 <script src="{{asset('/css/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('/css/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+
 <script src="{{asset('/css/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('/css/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <script src="{{asset('/css/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('/css/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
 <script src="{{asset('/css/jszip/jszip.min.js')}}"></script>
-<script src="{{asset('/css/pdfmake/pdfmake.min.js')}}"></script>
-<script src="{{asset('/css/pdfmake/vfs_fonts.js')}}"></script>
-<script src="{{asset('/css/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-<script src="{{asset('/css/datatables-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{asset('/css/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable({
