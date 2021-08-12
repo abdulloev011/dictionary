@@ -34,6 +34,13 @@ class AdminController extends Controller
         $newWord->save();
     	return redirect()->route('all-words');
     }
+    //Удаление слов
+    public function deleteWords($id)
+    {
+        Words::find($id)->delete();
+        return redirect()->route('all-words');
+        
+    }
     //Для измнения слов
     public function updateWord(WordRequest $req){
         $word = Words::find($req->words);
@@ -58,13 +65,6 @@ class AdminController extends Controller
         return view('admin.user',$users);
     }
 
-
-    /*public function myWords($id){
-        $words = DB::table('words')
-            ->join('users', 'users.id', '=', 'words.user_id')
-            ->find($id);
-        return view('admin.myWords',['words'=>$words]); 
-    }*/
 
     //Изменения роль пользователя 
     public function updateUser(Request $req){

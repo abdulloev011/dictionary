@@ -34,6 +34,7 @@ Route::middleware([Authenticate::class])->group(
                 Route::post('/add-word', [AdminController::class,'newWord'])->name('add-word');
                 Route::get('/add-word', [AdminController::class,'viewUpdate'])->name('view-update');
                 
+                Route::get('/delete-word/{id}', [AdminController::class,'deleteWords'])->name('delete-word');
             });
             Route::get('users', [AdminController::class,'users'])->name('users');
             Route::get('/delete-user/{id}', [AdminController::class,'delete'])->name('delete');

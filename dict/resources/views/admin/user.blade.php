@@ -102,7 +102,7 @@
 											@endforeach
 										</select>
 										<div class="invalid-feedback">
-											Пожалуйста, выберите тариф
+											Пожалуйста, выберите роль
 										</div>
 									</div>
 								</div>

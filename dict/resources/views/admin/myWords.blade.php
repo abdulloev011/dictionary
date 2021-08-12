@@ -87,7 +87,7 @@
 				</div>
 			</div>
 			<!-- /.card-header -->
-			<div class="card-body">
+			<div class="card-body text-center" >
 				@if ($errors->any())
 					<div class="alert alert-danger">
 						<ul>
@@ -104,25 +104,32 @@
 								<th >Id</th>
 								<th>Таджижский</th>
 								<th>Английский</th>
+								<th>Редактирование</th>
 							</tr>
 						</thead>
 							@foreach ($myWords as $w)
                                 <tr>	
 									<td>
-										<a role="button"  class="btn btn-link order-edit" style="color: #111;" data-toggle="modal" data-target="#update" >
-                                           {{$w->id_words}}
-										</a>
+                                       {{$w->id_words}}
 									</td>
 									<td>
-										<a role="button"  class="btn btn-link  order-edit" style="color: #111;" data-toggle="modal" data-target="#update" >
-											{{$w->tajik}}
-										</a>
+										{{$w->tajik}}
 									</td>
 									
 									<td>
-										<a role="button"  class="btn btn-link order-edit" style="color: #111;" data-toggle="modal" data-target="#update" >
-											{{$w->english}}
-										</a>
+										{{$w->english}}
+									</td>
+									<td>
+										<div class="text-center">
+											<a role="button"  class="btn btn-primary words-edit" style="color: #111;" data-toggle="modal" data-target="#update" data-id="{{$w->id_words}}">
+												<i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #fff"></i>
+											</a>											
+											
+											<a role="button" href="{{route('delete-word',$w->id_words)}}" class="btn btn-danger " style="color: #111;">
+												<i class="fa fa-trash" aria-hidden="true" style="color: #fff"></i>
+											</a>
+										
+										</div>
 									</td>
 								</tr>
 							@endforeach

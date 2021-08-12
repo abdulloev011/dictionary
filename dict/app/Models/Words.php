@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Words extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'id_words';
 }

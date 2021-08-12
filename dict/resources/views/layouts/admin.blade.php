@@ -130,7 +130,7 @@
           </li>
           <li class="nav-item">
             <a href="{{route("all-words")}}" class="nav-link @yield("orders")">
-              <i class="nav-icon fas fa-language"></i>
+              <i class="nav-icon fas fa-globe"></i>
               <p>
                 Cловарь
               </p>
@@ -148,7 +148,7 @@
           @endif
           <li class="nav-item">
             <a href="{{route('my-words',Auth::user()->id)}}" class="nav-link  @yield("my-words")">
-              <i class="nav-icon fas fa-tree"></i>
+              <i class="nav-icon fas fa-language"></i>
               <p>
                 Мои слова
               </p>

@@ -80,7 +80,7 @@
 													<i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #fff"></i>
 												</a>											
 												
-												<a role="button" href="" class="btn btn-danger " style="color: #111;">
+												<a role="button" href="{{route('delete-word',$w->id_words)}}" class="btn btn-danger " style="color: #111;">
 													<i class="fa fa-trash" aria-hidden="true" style="color: #fff"></i>
 												</a>
 											
