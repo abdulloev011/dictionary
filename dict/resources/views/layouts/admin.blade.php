@@ -237,8 +237,7 @@
 <script src="{{asset('/css/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{asset('/css/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('/css/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{asset('/css/jszip/jszip.min.js')}}"></script>
-
+<script src="{{asset('/css/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -246,12 +245,13 @@
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
-      "paging": false,
+      "paging": true,
       "lengthChange": false,
       "searching": false,
       "ordering": true,
       "info": true,
-      "autoWidth": true,
+      "autoWidth": false,
+      "responsive": true,
     });
   });
 </script>
