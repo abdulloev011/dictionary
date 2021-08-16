@@ -1,3 +1,2 @@
-# deligram
-DeliGram - IO Project
-[test-002]
+# dictionary
+Онлайн словарь - IT Project
