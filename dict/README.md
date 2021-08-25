@@ -1,2 +1,2 @@
 # dictionary
-Онлайн словарь - IT Project
+Онлайн словарь - IT RUN Project
